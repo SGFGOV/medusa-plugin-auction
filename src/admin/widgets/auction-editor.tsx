@@ -18,7 +18,7 @@ const AuctionEditor = (props: InjectedProps) => {
     const { product } = props;
 
     const { data, isLoading, error } = useAdminCustomQuery(
-        "/admin/forward/auctions",
+        "/admin/auctions/forward",
         ["auctions"],
         {
             product_id: product.id
