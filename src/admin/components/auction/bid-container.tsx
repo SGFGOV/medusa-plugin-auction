@@ -10,7 +10,7 @@ type Props = PropsWithChildren<{
     product: Product;
 }>;
 
-export const Container = ({ title, description, product, children }: Props) => {
+export const BidContainer = ({ title, description, children }: Props) => {
     const [drawerOpen, setDrawerOpen] = useState(false);
 
     return (
@@ -26,11 +26,11 @@ export const Container = ({ title, description, product, children }: Props) => {
                         </Heading>
                     )}
 
-                    <AuctionDrawer
+                    {/* <AuctionDrawer
                         product={product}
                         open={drawerOpen}
                         setOpen={setDrawerOpen}
-                    />
+                    /> */}
                 </div>
 
                 {description && (

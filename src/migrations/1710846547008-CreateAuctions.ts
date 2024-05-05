@@ -12,7 +12,8 @@ export class CreateAuctions1710846547008 implements MigrationInterface {
             `CREATE TABLE "auction" ("id" character varying NOT NULL, "created_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(), "updated_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(), "starts_at" TIMESTAMP NOT NULL, "ends_at" TIMESTAMP NOT NULL, "status" "public"."auction_status_enum" NOT NULL DEFAULT 'pending', "starting_price" integer NOT NULL, "product_id" character varying NOT NULL,"created_by" character varying NOT NULL,, "region_id" character varying NOT NULL, CONSTRAINT "PK_9dc876c629273e71646cf6dfa67" PRIMARY KEY ("id"))`
         );
         await queryRunner.query(
-            `CREATE TABLE "bid" ("id" character varying NOT NULL, `+`"created_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(), "updated_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(), "amount" integer NOT NULL, "customer_id" character varying NOT NULL, "auctionId" character varying, CONSTRAINT "PK_ed405dda320051aca2dcb1a50bb" PRIMARY KEY ("id"))`
+            `CREATE TABLE "bid" ("id" character varying NOT NULL, ` +
+                `"created_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(), "updated_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(), "amount" integer NOT NULL, "customer_id" character varying NOT NULL, "auctionId" character varying, CONSTRAINT "PK_ed405dda320051aca2dcb1a50bb" PRIMARY KEY ("id"))`
         );
         await queryRunner.query(
             `ALTER TABLE "bid" ADD CONSTRAINT "FK_2e00b0f268f93abcf693bb682c6" FOREIGN KEY ("auctionId") REFERENCES "auction"("id") ON DELETE NO ACTION ON UPDATE NO ACTION`

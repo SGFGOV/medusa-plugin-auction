@@ -36,3 +36,30 @@ export async function POST(
     res.status(200).json({ bid });
     return;
 }
+
+export async function GET(
+    req: MedusaRequest,
+    res: MedusaResponse
+): Promise<void> {
+    const auctionService = req.scope.resolve(
+        "auctionService"
+    ) as AuctionService;
+    const userId = req.user.userId;
+    if (userId) {
+        const auctions = await auctionService.listBid(
+            {
+                product_id: req.query.product_id as string,
+                customerId: userId
+            },
+            {
+                order: { ends_at: "DESC" },
+                relations: ["auction", "auction.region"]
+            }
+        );
+
+        res.status(200).json({ auctions });
+        return;
+    } else {
+        res.sendStatus(401);
+    }
+}

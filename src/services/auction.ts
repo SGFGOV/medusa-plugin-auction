@@ -49,6 +49,24 @@ export default class AuctionService {
         return await auctionRepo.find(query);
     }
 
+    async listBid(
+        filters?: FilterableBidFields,
+        config: FindConfig<Auction> = {}
+    ): Promise<Bid[]> {
+        const auctionRepo = this.manager.getRepository(Bid);
+        const { product_id, ...rest } = filters;
+        const query = buildQuery(rest, config);
+
+        if (product_id) {
+            query.where = {
+                ...query.where,
+                product_id: product_id ? In([product_id]) : undefined
+            };
+        }
+
+        return await auctionRepo.find(query);
+    }
+
     async create(data: Partial<Auction>): Promise<Auction> {
         const auctionRepo = this.manager.getRepository(Auction);
 
@@ -195,4 +213,10 @@ export type FilterableAuctionFields = {
     status?: AuctionStatus;
     product_id?: string;
     created_by?: string;
+};
+
+export type FilterableBidFields = {
+    id?: string;
+    product_id?: string;
+    customerId: string;
 };
