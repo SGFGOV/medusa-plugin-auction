@@ -48,6 +48,8 @@
 
 The medusa-plugin-auction project provides crucial auction functionality within the Medusa platform, offering features like managing auctions, creating/editing auction details, handling bids, and calculating auction status based on start and end dates. Key components include API routes for auction operations, components for UI interactions, and services for CRUD operations on auctions and bids. The project optimizes TypeScript compilation, sets up PostgreSQL connections, and ensures efficient server-side architecture for a seamless auction management experience within the Medusa Plugin Auction repository.
 
+It supports both forward and reverse auctions. 
+
 ---
 
 ## 📦 Features
