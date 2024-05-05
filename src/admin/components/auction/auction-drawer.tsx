@@ -50,7 +50,9 @@ export function AuctionDrawer({
     const [startingPrice, setStartingPrice] = useState<number>();
 
     const { mutateAsync, isLoading } = useAdminCustomPost(
-        auction?.id ? `/admin/auctions/${auction?.id}` : "/admin/auctions",
+        auction?.id
+            ? `/admin/auctions/forward/${auction?.id}`
+            : "/admin/auctions/forward",
         ["auctions"]
     );
     const { regions } = useAdminRegions();
