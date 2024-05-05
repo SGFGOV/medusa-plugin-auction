@@ -5,12 +5,12 @@ import {
     useAdminRegions,
     formatAmount
 } from "medusa-react";
-import { Container } from "../components/auction/container";
+import { Container } from "./container";
 import { Table, Heading, Badge } from "@medusajs/ui";
-import { Auction } from "../../models/auction";
-import { AuctionViewContainer } from "../components/auction/auction-view-container";
-import { AuctionReverseActions } from "../components/auction/auction-reverse-actions";
-import CountdownTimer from "../components/common/countdown";
+import { Auction } from "../../../models/auction";
+import { AuctionViewContainer } from "./auction-view-container";
+import { AuctionReverseActions } from "./auction-reverse-actions";
+import CountdownTimer from "../common/countdown";
 
 type InjectedProps = WidgetProps & {
     product?: Product;
@@ -30,9 +30,8 @@ const AuctionViewOngoing = (props: InjectedProps) => {
 
     return (
         <AuctionViewContainer
-            title="Auctions"
-            description={`Manage auctions for ${product.title}.`}
-            product={product}
+            title="Ongoing Auctions"
+            description={"Participate in auctions"}
         >
             {isLoading && <p>Loading...</p>}
             {error && <p>Error loading auctions</p>}
@@ -118,10 +117,6 @@ const AuctionViewOngoing = (props: InjectedProps) => {
             )}
         </AuctionViewContainer>
     );
-};
-
-export const config: WidgetConfig = {
-    zone: "product.details.after"
 };
 
 export default AuctionViewOngoing;

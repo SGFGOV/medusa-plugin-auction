@@ -5,10 +5,10 @@ import {
     useAdminRegions,
     formatAmount
 } from "medusa-react";
-import { Container } from "../components/auction/container";
+import { Container } from "./container";
 import { Table, Heading, Badge } from "@medusajs/ui";
-import { Bid } from "../../models/bid";
-import { AuctionActions } from "../components/auction/auction-actions";
+import { Bid } from "../../../models/bid";
+import { AuctionActions } from "./auction-actions";
 
 type InjectedProps = WidgetProps & {
     product?: Product;
@@ -96,10 +96,6 @@ const AuctionBids = (props: InjectedProps) => {
             )}
         </Container>
     );
-};
-
-export const config: WidgetConfig = {
-    zone: "product.details.after"
 };
 
 export default AuctionBids;

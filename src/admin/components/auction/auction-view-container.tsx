@@ -7,13 +7,11 @@ import { useState } from "react";
 type Props = PropsWithChildren<{
     title?: string;
     description?: string;
-    product: Product;
 }>;
 
 export const AuctionViewContainer = ({
     title,
     description,
-    product,
     children
 }: Props) => {
     const [drawerOpen, setDrawerOpen] = useState(false);
