@@ -10,7 +10,7 @@ import {
   Select,
   DropdownMenu,
 } from "@medusajs/ui";
-import { useAdminCustomPost, useAdminRegions } from "medusa-react";
+import { useAdminCustomPost, useAdminRegions,useAdminGetSession } from "medusa-react";
 import { useState } from "react";
 import { Auction } from "../../../models/auction";
 
@@ -51,6 +51,8 @@ export function AuctionDrawer({
   );
   const { regions } = useAdminRegions();
 
+  const {user} = useAdminGetSession()
+
   const region = regions?.find((r) => r.id === regionId);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -60,6 +62,7 @@ export function AuctionDrawer({
       ...formData,
       region_id: regionId,
       product_id: product.id,
+      created_by: user.id
     };
 
     if (startingPrice) data.starting_price = startingPrice * 100;

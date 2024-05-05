@@ -1,6 +1,6 @@
 import { MedusaRequest, MedusaResponse } from "@medusajs/medusa";
 
-import AuctionService from "../../../../../services/auction";
+import AuctionService from "../../../../../../services/auction";
 
 export async function POST(
   req: MedusaRequest,

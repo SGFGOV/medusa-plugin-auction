@@ -7,10 +7,12 @@ export async function GET(
   res: MedusaResponse
 ): Promise<void> {
   const auctionService = req.scope.resolve("auctionService") as AuctionService;
-
+  
+  const user_id = req.user.userId
   const auctions = await auctionService.list(
     {
       product_id: req.query.product_id as string,
+      id:user_id
     },
     {
       order: { ends_at: "ASC" },

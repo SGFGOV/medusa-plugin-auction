@@ -105,4 +105,5 @@ export type FilterableAuctionFields = {
   ends_at?: Date;
   status?: AuctionStatus;
   product_id?: string;
+  created_by?: string;
 };

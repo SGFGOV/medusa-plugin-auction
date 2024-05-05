@@ -31,6 +31,11 @@ export class Auction extends BaseEntity {
   @Column()
   region_id: string;
 
+  @Column()
+  created_by: string;
+
+
+
   @OneToMany(() => Bid, (b) => b.auction, {
     onDelete: "CASCADE",
   })

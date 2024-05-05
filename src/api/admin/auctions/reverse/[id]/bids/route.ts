@@ -18,12 +18,12 @@ export async function POST(
 
   const currentBids = auction.bids.map((b) => b.amount);
 
-  const maxBid = Math.max(...currentBids);
+  const minBid = Math.min(...currentBids);
 
-  if (data.amount <= maxBid) {
+  if (data.amount >= minBid) {
     res.status(400).json({
-      message: `Please place a bid higher than the current highest bid of`,
-      highestBid: maxBid,
+      message: `Please place a bid lower than the current min bid of`,
+      lowest: minBid,
     });
     return;
   }

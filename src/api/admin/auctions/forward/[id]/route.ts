@@ -26,10 +26,18 @@ export async function POST(
 
   const auctionService = req.scope.resolve("auctionService") as AuctionService;
 
+  const userAuction =  await auctionService.retrieve(id);
+
+  const user_id = req.user.userId
+  
+  if(userAuction.created_by == user_id)
+  {
   const auction = await auctionService.update(id, req.body);
 
   res.status(200).json({ auction });
   return;
+  }
+  res.sendStatus(401)
 }
 
 export async function DELETE(
@@ -39,9 +47,17 @@ export async function DELETE(
   const id = req.params.id;
 
   const auctionService = req.scope.resolve("auctionService") as AuctionService;
+  const userAuction =  await auctionService.retrieve(id);
 
+  const user_id = req.user.userId
+  
+  if(userAuction.created_by == user_id)
+  {
   await auctionService.delete(id);
 
   res.status(200).json({});
   return;
+}
+res.sendStatus(401)
+
 }
