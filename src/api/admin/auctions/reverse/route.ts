@@ -11,11 +11,9 @@ export async function GET(
         "auctionService"
     ) as AuctionService;
 
-    const userId = req.user.userId;
     const auctions = await auctionService.listByIds(
         {
-            product_id: req.query.product_id as string[],
-            id: userId
+            product_id: req.query.product_id as string[]
         },
         {
             order: { ends_at: "ASC" },
