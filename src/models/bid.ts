@@ -1,20 +1,22 @@
+/* eslint-disable new-cap */
+/* eslint-disable require-jsdoc */
 import { generateEntityId, BaseEntity } from "@medusajs/medusa";
-import { BeforeInsert, Column, Entity, ManyToOne, OneToMany } from "typeorm";
+import { BeforeInsert, Column, Entity, ManyToOne } from "typeorm";
 import { Auction } from "./auction";
 
 @Entity()
 export class Bid extends BaseEntity {
-  @Column()
-  amount: number;
+    @Column()
+    amount: number;
 
-  @Column()
-  customer_id: string;
+    @Column()
+    customer_id: string;
 
-  @ManyToOne(() => Auction, (auction) => auction.bids)
-  auction: Auction;
+    @ManyToOne(() => Auction, (auction) => auction.bids)
+    auction: Auction;
 
-  @BeforeInsert()
-  private beforeInsert(): void {
-    this.id = generateEntityId(this.id, "bid");
-  }
+    @BeforeInsert()
+    private beforeInsert(): void {
+        this.id = generateEntityId(this.id, "bid");
+    }
 }
