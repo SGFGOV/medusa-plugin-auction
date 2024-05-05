@@ -1,6 +1,6 @@
 {
   "name": "@sgftech/medusa-plugin-auction",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A pluging for auctions",
   "author": "@sgftech",
   "license": "MIT",
@@ -13,7 +13,7 @@
     "medusa"
   ],
   "repository": {
-    "git":"https://github.com/SGFGOV/medusa-auction-demo"
+    "git": "https://github.com/SGFGOV/medusa-auction-demo"
   },
   "scripts": {
     "clean": "cross-env ./node_modules/.bin/rimraf dist",
