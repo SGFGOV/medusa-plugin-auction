@@ -8,7 +8,8 @@ import {
 import { Container } from "../components/auction/container";
 import { Table, Heading, Badge } from "@medusajs/ui";
 import { Auction } from "../../models/auction";
-import { AuctionActions } from "../components/auction/auction-actions";
+import { AuctionViewContainer } from "../components/auction/auction-view-container";
+import { AuctionReverseActions } from "../components/auction/auction-reverse-actions";
 
 type InjectedProps = WidgetProps & {
     product: Product;
@@ -27,7 +28,7 @@ const AuctionViewOngoing = (props: InjectedProps) => {
     const auctions = (data?.auctions || []) as Auction[];
 
     return (
-        <Container
+        <AuctionViewContainer
             title="Auctions"
             description={`Manage auctions for ${product.title}.`}
             product={product}
@@ -101,7 +102,7 @@ const AuctionViewOngoing = (props: InjectedProps) => {
                                         {new Date(a.ends_at).toDateString()}
                                     </Table.Cell>
                                     <Table.Cell className="flex items-center justify-end">
-                                        <AuctionActions
+                                        <AuctionReverseActions
                                             auction={a}
                                             product={product}
                                         />
@@ -112,7 +113,7 @@ const AuctionViewOngoing = (props: InjectedProps) => {
                     </Table.Body>
                 </Table>
             )}
-        </Container>
+        </AuctionViewContainer>
     );
 };
 

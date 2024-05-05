@@ -41,8 +41,9 @@ export default async function handler({
                 await auctionService.update(auction.id, auction);
             }
         }
-        logger.success(activity, "Completed updating auctions");
     } catch (e) {
         logger.failure(activity, "Error updating auctions " + e.message);
+        return;
     }
+    logger.success(activity, "Completed updating auctions");
 }
