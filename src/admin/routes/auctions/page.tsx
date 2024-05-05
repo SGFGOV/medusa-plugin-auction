@@ -17,7 +17,7 @@ const notificationHandler = {
     }
 };
 
-const ReverseAuctions = (): React.ReactElement => {
+const Auctions = (): React.ReactElement => {
     return (
         <>
             <AuctionViewOnGoing notify={notificationHandler} />
@@ -25,7 +25,7 @@ const ReverseAuctions = (): React.ReactElement => {
         </>
     );
 };
-export default ReverseAuctions;
+export default Auctions;
 
 export const config: RouteConfig = {
     link: {
