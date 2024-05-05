@@ -1,6 +1,6 @@
 {
   "name": "@sgftech/medusa-plugin-auction",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A plugin for auctions",
   "author": "@sgftech",
   "license": "MIT",
@@ -64,7 +64,6 @@
     "typescript": "^4.5.2",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
-    
     "eslint": "^8.23.1",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.5.0",
@@ -72,7 +71,6 @@
     "eslint-plugin-file-progress": "^1.3.0",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.7.1"
-    
   },
   "jest": {
     "globals": {
