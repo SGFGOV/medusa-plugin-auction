@@ -1,17 +1,20 @@
 {
-  "name": "medusa-starter-default",
-  "version": "0.0.1",
-  "description": "A starter for Medusa projects.",
-  "author": "Medusa (https://medusajs.com)",
+  "name": "@sgftech/medusa-plugin-auction",
+  "version": "0.0.2",
+  "description": "A pluging for auctions",
+  "author": "@sgftech",
   "license": "MIT",
   "keywords": [
-    "sqlite",
+    "auctions",
     "postgres",
     "typescript",
     "ecommerce",
     "headless",
     "medusa"
   ],
+  "repository": {
+    "git":"https://github.com/SGFGOV/medusa-auction-demo"
+  },
   "scripts": {
     "clean": "cross-env ./node_modules/.bin/rimraf dist",
     "build": "cross-env npm run clean && npm run build:server && npm run build:admin",
@@ -19,7 +22,6 @@
     "build:admin": "cross-env medusa-admin build",
     "watch": "cross-env tsc --watch",
     "test": "cross-env jest",
-    "seed": "cross-env medusa seed -f ./data/seed.json",
     "start": "cross-env npm run build && medusa start",
     "start:custom": "cross-env npm run build && node --preserve-symlinks --trace-warnings index.js",
     "dev": "cross-env npm run build:server && medusa develop"
