@@ -20,7 +20,7 @@ const AuctionViewOngoing = (props: InjectedProps) => {
     const { product } = props;
 
     const { data, isLoading, error } = useAdminCustomQuery(
-        "/admin/reverse/auctions",
+        "/admin/auctions/reverse",
         ["auctions"]
     );
 

@@ -21,7 +21,7 @@ export function AuctionReverseActions({
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [bid, setBid] = useState(0.0);
     const { mutateAsync, isLoading } = useAdminCustomPost(
-        "/admin/reverse/auctions/" + auction.id,
+        "/admin/auctions/reverse" + auction.id,
         ["auctions"]
     );
 
