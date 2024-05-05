@@ -37,7 +37,6 @@
 >   - [⚙️ Installation](#️-installation)
 >   - [🤖 Running medusa-plugin-auction](#-running-medusa-plugin-auction)
 >   - [🧪 Tests](#-tests)
-> - [🛠 Project Roadmap](#-project-roadmap)
 > - [🤝 Contributing](#-contributing)
 > - [📄 License](#-license)
 > - [👏 Acknowledgments](#-acknowledgments)
