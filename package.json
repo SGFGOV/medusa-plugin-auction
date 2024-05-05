@@ -21,6 +21,7 @@
     "build": "cross-env npm run clean && npm run build:server && npm run build:admin",
     "build:server": "cross-env npm run clean && tsc -p tsconfig.server.json",
     "build:admin": "cross-env medusa-admin build",
+    "prepare": "cross-env NODE_ENV=production npm run build:server && medusa-admin bundle",
     "watch": "cross-env tsc --watch",
     "test": "cross-env jest",
     "start": "cross-env npm run build && medusa start",
@@ -71,6 +72,10 @@
     "eslint-plugin-file-progress": "^1.3.0",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.7.1"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-router-dom": "^6.13.0"
   },
   "jest": {
     "globals": {

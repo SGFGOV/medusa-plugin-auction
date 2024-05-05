@@ -10,6 +10,7 @@ import { Table, Heading, Badge } from "@medusajs/ui";
 import { Auction } from "../../models/auction";
 import { AuctionViewContainer } from "../components/auction/auction-view-container";
 import { AuctionReverseActions } from "../components/auction/auction-reverse-actions";
+import CountdownTimer from "../components/common/countdown";
 
 type InjectedProps = WidgetProps & {
     product?: Product;
@@ -75,7 +76,6 @@ const AuctionViewOngoing = (props: InjectedProps) => {
                                 amount: a.starting_price,
                                 region
                             });
-
                             return (
                                 <Table.Row key={a.id}>
                                     <Table.Cell>
@@ -99,7 +99,10 @@ const AuctionViewOngoing = (props: InjectedProps) => {
                                         {new Date(a.starts_at).toDateString()}
                                     </Table.Cell>
                                     <Table.Cell>
-                                        {new Date(a.ends_at).toDateString()}
+                                        <CountdownTimer
+                                            endTime={a.ends_at.getTime() / 1000}
+                                        />
+                                        {/* {new Date(a.ends_at).toDateString()} */}
                                     </Table.Cell>
                                     <Table.Cell className="flex items-center justify-end">
                                         <AuctionReverseActions
