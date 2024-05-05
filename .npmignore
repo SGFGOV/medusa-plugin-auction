@@ -4,3 +4,6 @@ src/
 *.env
 tsconfig*
 .cache/*
+.github/
+.vscode/
+node_modules/

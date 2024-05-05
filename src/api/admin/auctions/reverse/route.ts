@@ -2,7 +2,7 @@ import { MedusaRequest, MedusaResponse } from "@medusajs/medusa";
 
 import AuctionService, {
   FilterableAuctionFields,
-} from "../../../services/auction";
+} from "../../../../services/auction";
 
 export async function GET(
   req: MedusaRequest,
