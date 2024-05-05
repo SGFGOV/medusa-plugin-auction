@@ -12,7 +12,7 @@ import { AuctionViewContainer } from "../components/auction/auction-view-contain
 import { AuctionReverseActions } from "../components/auction/auction-reverse-actions";
 
 type InjectedProps = WidgetProps & {
-    product: Product;
+    product?: Product;
 };
 
 const AuctionViewOngoing = (props: InjectedProps) => {

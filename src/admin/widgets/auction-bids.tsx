@@ -14,7 +14,7 @@ type InjectedProps = WidgetProps & {
     product?: Product;
 };
 
-const AuctionEditor = (props: InjectedProps) => {
+const AuctionBids = (props: InjectedProps) => {
     const { product } = props;
 
     const { data, isLoading, error } = useAdminCustomQuery(
@@ -102,4 +102,4 @@ export const config: WidgetConfig = {
     zone: "product.details.after"
 };
 
-export default AuctionEditor;
+export default AuctionBids;
