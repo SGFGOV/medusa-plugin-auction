@@ -21,7 +21,7 @@ export function AuctionActions({
     const [drawerOpen, setDrawerOpen] = useState(false);
 
     const { mutateAsync, isLoading } = useAdminCustomDelete(
-        "/admin/auctions/forward" + auction.id,
+        "/admin/auctions/forward/" + auction.id,
         ["auctions"]
     );
 
