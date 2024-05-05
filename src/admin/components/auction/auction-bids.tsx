@@ -18,7 +18,7 @@ const AuctionBids = (props: InjectedProps) => {
     const { product } = props;
 
     const { data, isLoading, error } = useAdminCustomQuery(
-        "/admin/reverse/auctions/bids",
+        "/admin/auctions/reverse/bids",
         ["bids"]
     );
 
