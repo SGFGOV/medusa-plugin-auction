@@ -1,7 +1,7 @@
 {
   "name": "@sgftech/medusa-plugin-auction",
   "version": "0.0.5",
-  "description": "A pluging for auctions",
+  "description": "A plugin for auctions",
   "author": "@sgftech",
   "license": "MIT",
   "keywords": [
