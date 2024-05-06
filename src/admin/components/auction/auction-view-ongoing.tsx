@@ -48,7 +48,7 @@ const AuctionViewOngoing = (props: InjectedProps) => {
                             <Table.Cell>Highest Bid</Table.Cell>
                             <Table.Cell>Starting Price</Table.Cell>
                             <Table.Cell>Starts At</Table.Cell>
-                            <Table.Cell>Ends At</Table.Cell>
+                            <Table.Cell>Ends In</Table.Cell>
                             <Table.Cell></Table.Cell>
                         </Table.Row>
                     </Table.Header>
@@ -75,6 +75,7 @@ const AuctionViewOngoing = (props: InjectedProps) => {
                                 amount: a.starting_price,
                                 region
                             });
+                            const startTime = new Date(a.starts_at);
                             return (
                                 <Table.Row key={a.id}>
                                     <Table.Cell>
@@ -85,7 +86,7 @@ const AuctionViewOngoing = (props: InjectedProps) => {
                                                     : "orange"
                                             }
                                         >
-                                            {a.status}
+                                            {`${a.id}` + "\n" + `${a.status}`}
                                         </Badge>
                                     </Table.Cell>
                                     <Table.Cell>
@@ -95,11 +96,15 @@ const AuctionViewOngoing = (props: InjectedProps) => {
                                     </Table.Cell>
                                     <Table.Cell>{startingPrice}</Table.Cell>
                                     <Table.Cell>
-                                        {new Date(a.starts_at).toDateString()}
+                                        {startTime.toISOString()}
                                     </Table.Cell>
                                     <Table.Cell>
                                         <CountdownTimer
-                                            endTime={a.ends_at.getTime() / 1000}
+                                            endTime={
+                                                (new Date(a.ends_at).getTime() -
+                                                    Date.now()) /
+                                                1000
+                                            }
                                         />
                                         {/* {new Date(a.ends_at).toDateString()} */}
                                     </Table.Cell>

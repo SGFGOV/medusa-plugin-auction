@@ -15,7 +15,9 @@ const CountdownTimer = ({ endTime }) => {
     };
 
     return (
-        <div style={{ color: getColor() }}>{remainingTime} seconds left</div>
+        <div style={{ color: getColor() }}>
+            {remainingTime > 0 ? remainingTime : 0} seconds left
+        </div>
     );
 };
 

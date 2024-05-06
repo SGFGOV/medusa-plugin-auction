@@ -17,7 +17,7 @@ yarn.lock
 medusa-db.sql
 build
 .cache
-
+*.tgz
 .yarn/*
 !.yarn/patches
 !.yarn/plugins

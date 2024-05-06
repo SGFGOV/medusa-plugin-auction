@@ -5,40 +5,37 @@ import {
     useAdminRegions,
     formatAmount
 } from "medusa-react";
-import { Container } from "./container";
-import { Table, Heading, Badge } from "@medusajs/ui";
+
+import { Table, Heading, Badge, Container } from "@medusajs/ui";
 import { Bid } from "../../../models/bid";
 import { AuctionActions } from "./auction-actions";
+import { useAdminProducts } from "medusa-react";
 
 type InjectedProps = WidgetProps & {
     product?: Product;
 };
 
 const AuctionBids = (props: InjectedProps) => {
-    const { product } = props;
-
     const { data, isLoading, error } = useAdminCustomQuery(
         "/admin/auctions/reverse/bids",
         ["bids"]
     );
+    const bids = (data?.bids || []) as Bid[];
+
+    const productIds = bids.map((b) => b.auction.product_id);
+    const { products } = useAdminProducts({
+        id: productIds
+    });
 
     const { regions } = useAdminRegions();
 
-    const bids = (data?.bids || []) as Bid[];
-
     return (
-        <Container
-            title="Bids"
-            description={`View your bids ${
-                product?.title ? "" : "for " + product.title
-            }.`}
-            product={product}
-        >
+        <Container title="Bids">
             {isLoading && <p>Loading...</p>}
-            {error && <p>Error loading auctions</p>}
+            {error && <p>Error loading bids</p>}
 
             <Heading level="h2" className="inter-large-semibold my-base">
-                All auctions ({bids.length})
+                All bids ({bids.length})
             </Heading>
 
             {bids && (
@@ -72,7 +69,12 @@ const AuctionBids = (props: InjectedProps) => {
                                 <Table.Row key={b.id}>
                                     <Table.Cell>{idx + 1}</Table.Cell>
                                     <Table.Cell>
-                                        {b.auction.product_id}
+                                        {
+                                            products.find(
+                                                (p) =>
+                                                    p.id == b.auction.product_id
+                                            ).title
+                                        }
                                     </Table.Cell>
                                     <Table.Cell>{amount}</Table.Cell>
                                     <Table.Cell>{b.auction.id}</Table.Cell>
