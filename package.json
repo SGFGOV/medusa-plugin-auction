@@ -5,6 +5,8 @@
   "author": "@sgftech",
   "license": "MIT",
   "keywords": [
+    "medusa-plugin",
+    "medusa-plugin-auction",
     "auctions",
     "postgres",
     "typescript",
