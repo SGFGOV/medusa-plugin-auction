@@ -16,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/SGFGOV/medusa-plugin-auction"
+    "url": "git+https://github.com/SGFGOV/medusa-plugin-auction.git"
   },
   "scripts": {
     "clean": "cross-env ./node_modules/.bin/rimraf dist",
