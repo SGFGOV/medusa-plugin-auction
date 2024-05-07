@@ -1,8 +1,8 @@
 /* eslint-disable require-jsdoc */
 import { MigrationInterface, QueryRunner } from "typeorm";
 
-export class CreateAuctions1710846547008 implements MigrationInterface {
-    name = "CreateAuctions1710846547008";
+export class CreateAuctions1710846547009 implements MigrationInterface {
+    name = "CreateAuctions1710846547009";
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.query(
