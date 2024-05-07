@@ -1,8 +1,8 @@
 /* eslint-disable require-jsdoc */
 import { MigrationInterface, QueryRunner } from "typeorm";
 
-export class CreateAuctions1710846547009 implements MigrationInterface {
-    name = "CreateAuctions1710846547009";
+export class CreateAuctions1710846547008 implements MigrationInterface {
+    name = "CreateAuctions1710846547008";
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.query(
@@ -11,7 +11,7 @@ export class CreateAuctions1710846547009 implements MigrationInterface {
         await queryRunner.query(
             `CREATE TABLE "auction" ("id" character varying NOT NULL, "created_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),` +
                 ` "updated_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(), "starts_at" TIMESTAMP NOT NULL, "ends_at" TIMESTAMP NOT NULL, ` +
-                `"status" "public"."auction_status_enum" NOT NULL DEFAULT 'pending', "starting_price" integer NOT NULL,"quantity" integer NOT NULL, "product_id" character varying NOT NULL,` +
+                `"status" "public"."auction_status_enum" NOT NULL DEFAULT 'pending', "starting_price" integer NOT NULL, "product_id" character varying NOT NULL,` +
                 `"created_by" character varying NOT NULL, "region_id" character varying NOT NULL, CONSTRAINT "PK_9dc876c629273e71646cf6dfa67" PRIMARY KEY ("id"))`
         );
         await queryRunner.query(
