@@ -47,6 +47,7 @@ const AuctionViewOngoing = (props: InjectedProps) => {
                             <Table.Cell>Status</Table.Cell>
                             <Table.Cell>Highest Bid</Table.Cell>
                             <Table.Cell>Starting Price</Table.Cell>
+                            <Table.Cell>Quantity</Table.Cell>
                             <Table.Cell>Starts At</Table.Cell>
                             <Table.Cell>Ends In</Table.Cell>
                             <Table.Cell></Table.Cell>
@@ -75,6 +76,7 @@ const AuctionViewOngoing = (props: InjectedProps) => {
                                 amount: a.starting_price,
                                 region
                             });
+                            const quantity = Math.ceil(a.quantity);
                             const startTime = new Date(a.starts_at);
                             return (
                                 <Table.Row key={a.id}>
@@ -95,6 +97,7 @@ const AuctionViewOngoing = (props: InjectedProps) => {
                                             : "No bids yet"}
                                     </Table.Cell>
                                     <Table.Cell>{startingPrice}</Table.Cell>
+                                    <Table.Cell>{quantity}</Table.Cell>
                                     <Table.Cell>
                                         {startTime.toISOString()}
                                     </Table.Cell>

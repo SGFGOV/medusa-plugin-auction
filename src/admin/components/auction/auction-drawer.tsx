@@ -48,6 +48,7 @@ export function AuctionDrawer({
     });
 
     const [startingPrice, setStartingPrice] = useState<number>();
+    const [quantity, setQuantity] = useState<number>(0);
 
     const { mutateAsync, isLoading } = useAdminCustomPost(
         auction?.id
@@ -214,6 +215,24 @@ export function AuctionDrawer({
                                         auction?.starting_price / 100
                                     }
                                     value={startingPrice}
+                                />
+                            </div>
+                        </div>
+                        <div className="flex flex-col gap-2 mb-4">
+                            <Label>Quantity</Label>
+                            <div className="flex gap-2 items-center">
+                                <span className="text-gray-500">
+                                    {(product as any).unit ?? "Kgs"}
+                                </span>
+                                <Input
+                                    onChange={(e) => {
+                                        setQuantity(parseFloat(e.target.value));
+                                    }}
+                                    type="number"
+                                    name="quantity"
+                                    placeholder="Quantity"
+                                    defaultValue={quantity || auction?.quantity}
+                                    value={quantity}
                                 />
                             </div>
                         </div>

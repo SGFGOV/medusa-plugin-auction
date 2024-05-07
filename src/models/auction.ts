@@ -30,6 +30,9 @@ export class Auction extends BaseEntity {
     status: AuctionStatus;
 
     @Column()
+    quantity: number;
+
+    @Column()
     starting_price: number;
 
     @Column()
