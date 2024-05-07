@@ -14,7 +14,6 @@ export async function GET(
     if (customerId) {
         const auctions = await auctionService.list(
             {
-                product_id: req.query.product_id as string,
                 created_by: customerId
             },
             {
