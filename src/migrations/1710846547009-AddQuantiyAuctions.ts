@@ -6,7 +6,7 @@ export class AddQuantityAuctions1710846547009 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.query(
-            `ALTER TABLE "auction" ADD COLUMN IF NOT EXISTS "quantity" integer NOT NULL`
+            `ALTER TABLE "auction" ADD COLUMN IF NOT EXISTS "quantity" integer NOT NULL DEFAULT 0`
         );
     }
 
