@@ -265,7 +265,7 @@ yarn run build
 
 ```
 {
-            resolve: "@sgftech/medusa-plugin-auction@0.0.5"
+            resolve: "@sgftech/medusa-plugin-auction"
         }
 ```
 ### 🤖 Running medusa-plugin-auction
@@ -277,7 +277,7 @@ yarn run build
 yarn run start
 ```
 
-### 🧪 Tests -- work in progres
+### 🧪 Tests -- work in progress
 
 To execute tests, run:
 
@@ -338,3 +338,18 @@ This project is protected under the [MIT](https://github.com/SGFGOV/medusa-plugi
 [**Return**](#-quick-links)
 
 ---
+
+## 🙏 Support the Project
+
+If you find the **medusa-plugin-auction** project valuable and would like to contribute to its continued development and maintenance, please consider supporting us through GitHub Sponsorship. Your sponsorship helps us allocate more time and resources to enhance the functionality, fix bugs, and provide timely support to the community.
+
+By sponsoring the project, you will gain access to exclusive benefits, such as:
+
+- Early access to new features and updates
+- Direct communication with the project maintainers
+- Recognition and gratitude in the project's documentation and README
+
+Your support is crucial in ensuring the longevity and sustainability of the **medusa-plugin-auction** project. Together, we can make a difference and empower developers worldwide.
+
+To sponsor the project, simply click on the **Sponsor** button at the top of the repository page. We appreciate any contribution, big or small, and thank you for your support!
+
