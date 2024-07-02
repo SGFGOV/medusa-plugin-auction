@@ -9,7 +9,7 @@ export async function POST(
 ): Promise<void> {
     const auctionId = req.params.id;
 
-    const data = JSON.parse(req.body);
+    const data = JSON.parse(req.body as string);
 
     const auctionService = req.scope.resolve(
         "auctionService"
