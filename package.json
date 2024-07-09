@@ -1,6 +1,6 @@
 {
   "name": "@sgftech/medusa-plugin-auction",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "A plugin for auctions",
   "author": "@sgftech",
   "license": "MIT",
@@ -37,7 +37,6 @@
     "@medusajs/event-bus-local": "^1.9.8",
     "@medusajs/event-bus-redis": "^1.8.11",
     "@medusajs/file-local": "^1.0.3",
-    
     "@tanstack/react-query": "4.22.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
