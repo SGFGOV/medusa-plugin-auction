@@ -2,7 +2,7 @@
 /* eslint-disable new-cap */
 /* eslint-disable require-jsdoc */
 import { BaseEntity, generateEntityId } from "@medusajs/medusa";
-import { BeforeInsert, Column, Entity, OneToMany } from "typeorm";
+import { BeforeInsert, Column, Entity, JoinColumn, OneToMany } from "typeorm";
 import { Bid } from "./bid";
 import getStatus from "../util/get-status";
 
@@ -47,6 +47,7 @@ export class Auction extends BaseEntity {
     @OneToMany(() => Bid, (b) => b.auction, {
         onDelete: "CASCADE"
     })
+    @JoinColumn({ name: "id", referencedColumnName: "auction_id" })
     bids: Bid[];
 
     @BeforeInsert()
