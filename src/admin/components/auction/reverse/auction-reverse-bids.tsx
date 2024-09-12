@@ -7,8 +7,8 @@ import {
 } from "medusa-react";
 
 import { Table, Heading, Badge, Container } from "@medusajs/ui";
-import { Bid } from "../../../models/bid";
-import { AuctionActions } from "./auction-actions";
+import { Bid } from "../../../../models/bid";
+import { AuctionActions } from "../forward/auction-actions";
 import { useAdminProducts } from "medusa-react";
 
 type InjectedProps = WidgetProps & {

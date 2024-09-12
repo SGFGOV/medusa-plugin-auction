@@ -1,6 +1,6 @@
 import { RouteConfig } from "@medusajs/admin";
-import AuctionViewOnGoing from "../../components/auction/auction-view-ongoing";
-import AuctionBids from "../../components/auction/auction-bids";
+import AuctionViewOnGoing from "../../components/auction/reverse/auction-reverse-view-ongoing";
+import AuctionBids from "../../components/auction/reverse/auction-reverse-bids";
 import { Puzzle } from "@medusajs/icons";
 import { Container } from "@medusajs/ui";
 

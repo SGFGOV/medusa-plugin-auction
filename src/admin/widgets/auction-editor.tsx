@@ -5,10 +5,10 @@ import {
     useAdminRegions,
     formatAmount
 } from "medusa-react";
-import { Container } from "../components/auction/container";
+import { Container } from "../components/common/container";
 import { Table, Heading, Badge } from "@medusajs/ui";
 import { Auction } from "../../models/auction";
-import { AuctionActions } from "../components/auction/auction-actions";
+import { AuctionActions } from "../components/auction/forward/auction-actions";
 
 type InjectedProps = WidgetProps & {
     product: Product;

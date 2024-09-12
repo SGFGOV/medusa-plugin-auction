@@ -1,19 +1,16 @@
 import { PropsWithChildren } from "react";
 import { Text, Heading } from "@medusajs/ui";
-import { AuctionDrawer } from "./auction-drawer";
+import { AuctionDrawer } from "../auction/forward/auction-drawer";
 import { Product } from "@medusajs/medusa";
 import { useState } from "react";
 
 type Props = PropsWithChildren<{
     title?: string;
     description?: string;
+    product: Product;
 }>;
 
-export const AuctionViewContainer = ({
-    title,
-    description,
-    children
-}: Props) => {
+export const BidContainer = ({ title, description, children }: Props) => {
     const [drawerOpen, setDrawerOpen] = useState(false);
 
     return (
@@ -28,6 +25,12 @@ export const AuctionViewContainer = ({
                             {title}
                         </Heading>
                     )}
+
+                    {/* <AuctionDrawer
+                        product={product}
+                        open={drawerOpen}
+                        setOpen={setDrawerOpen}
+                    /> */}
                 </div>
 
                 {description && (

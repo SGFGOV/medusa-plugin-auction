@@ -6,7 +6,7 @@ import {
 } from "@medusajs/icons";
 import { DropdownMenu, IconButton } from "@medusajs/ui";
 import { Auction } from "src/models/auction";
-import { AuctionDrawer } from "./auction-drawer";
+import { AuctionDrawer } from "../forward/auction-drawer";
 import { Product } from "@medusajs/medusa";
 import { useState } from "react";
 import { useAdminCustomPost } from "medusa-react";

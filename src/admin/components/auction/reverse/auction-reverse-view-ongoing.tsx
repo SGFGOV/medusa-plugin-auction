@@ -5,12 +5,12 @@ import {
     useAdminRegions,
     formatAmount
 } from "medusa-react";
-import { Container } from "./container";
+import { Container } from "../../common/container";
 import { Table, Heading, Badge } from "@medusajs/ui";
-import { Auction } from "../../../models/auction";
-import { AuctionViewContainer } from "./auction-view-container";
+import { Auction } from "../../../../models/auction";
+import { AuctionViewContainer } from "../../common/auction-view-container";
 import { AuctionReverseActions } from "./auction-reverse-actions";
-import CountdownTimer from "../common/countdown";
+import CountdownTimer from "../../common/countdown";
 
 type InjectedProps = WidgetProps & {
     product?: Product;

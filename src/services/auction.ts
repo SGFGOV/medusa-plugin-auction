@@ -115,6 +115,7 @@ export default class AuctionService extends TransactionBaseService {
 
             return await auctionRepo.save(auction);
         });
+        this.logger.info(`Created auction ${auction.id}`);
         return auction;
     }
 
@@ -233,6 +234,7 @@ export default class AuctionService extends TransactionBaseService {
             await this.publishEvent(auction);
             return await auctionRepo.findOne({ where: { id } });
         });
+        this.logger.info(`Updated auction ${auction.id}`);
         return auction;
     }
 

@@ -16,7 +16,7 @@ import {
     useAdminGetSession
 } from "medusa-react";
 import { useState } from "react";
-import { Auction } from "../../../models/auction";
+import { Auction } from "../../../../models/auction";
 
 enum AuctionStatus {
     PENDING = "pending",
