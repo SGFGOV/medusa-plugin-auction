@@ -59,7 +59,7 @@ export class Auction extends BaseEntity {
     bids: Bid[];
 
     @ManyToOne(() => Region, (b) => b.auctions)
-    @JoinColumn({ name: "id", referencedColumnName: "region_id" })
+    @JoinColumn({ name: "region_id", referencedColumnName: "id" })
     region: Region;
 
     @BeforeInsert()
