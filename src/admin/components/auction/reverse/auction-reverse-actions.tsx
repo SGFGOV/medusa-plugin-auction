@@ -6,11 +6,11 @@ import {
 } from "@medusajs/icons";
 import { DropdownMenu, IconButton } from "@medusajs/ui";
 import { Auction } from "src/models/auction";
-import { AuctionForwardDrawer } from "../forward/auction-forward-drawer";
+import { AuctionForwardCreate } from "../forward/auction-forward-create";
 import { Product } from "@medusajs/medusa";
 import { useState } from "react";
 import { useAdminCustomPost } from "medusa-react";
-import { AuctionReverseDrawer } from "./auction-reverse-drawer";
+import { AuctionReverseCreate } from "./auction-reverse-create";
 
 export function AuctionReverseActions({
     auction,
@@ -57,12 +57,12 @@ export function AuctionReverseActions({
                     </DropdownMenu.Item>
                 </DropdownMenu.Content>
             </DropdownMenu>
-            <AuctionReverseDrawer
+            {/* <AuctionReverseDrawer
                 auction={auction}
                 product={product}
                 open={drawerOpen}
                 setOpen={setDrawerOpen}
-            />
+            /> */}
         </>
     );
 }

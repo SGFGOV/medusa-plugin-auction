@@ -17,7 +17,6 @@ import {
 } from "medusa-react";
 import { useState } from "react";
 import { Auction } from "../../../../models/auction";
-
 enum AuctionStatus {
     PENDING = "pending",
     ACTIVE = "active",
@@ -26,7 +25,7 @@ enum AuctionStatus {
     SOLD = "sold"
 }
 
-export function AuctionForwardDrawer({
+export function AuctionReverseCreate({
     auction,
     product,
     open,
@@ -52,8 +51,8 @@ export function AuctionForwardDrawer({
 
     const { mutateAsync, isLoading } = useAdminCustomPost(
         auction?.id
-            ? `/admin/auctions/forward/${auction?.id}`
-            : "/admin/auctions/forward",
+            ? `/admin/auctions/reverse/${auction?.id}`
+            : "/admin/auctions/reverse",
         ["auctions"]
     );
     const { regions } = useAdminRegions();

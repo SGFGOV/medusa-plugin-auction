@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 import { Text, Heading } from "@medusajs/ui";
-import { AuctionForwardDrawer } from "../auction/forward/auction-forward-drawer";
+import { AuctionForwardCreate } from "../auction/forward/auction-forward-create";
 import { Product } from "@medusajs/medusa";
 import { useState } from "react";
 
