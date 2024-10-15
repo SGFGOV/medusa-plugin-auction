@@ -2,9 +2,17 @@
 /* eslint-disable new-cap */
 /* eslint-disable require-jsdoc */
 import { BaseEntity, generateEntityId } from "@medusajs/medusa";
-import { BeforeInsert, Column, Entity, JoinColumn, OneToMany } from "typeorm";
+import {
+    BeforeInsert,
+    Column,
+    Entity,
+    JoinColumn,
+    ManyToOne,
+    OneToMany
+} from "typeorm";
 import { Bid } from "./bid";
 import getStatus from "../util/get-status";
+import { Region } from "./region";
 
 export enum AuctionStatus {
     PENDING = "pending",
@@ -49,6 +57,10 @@ export class Auction extends BaseEntity {
     })
     @JoinColumn({ name: "id", referencedColumnName: "auction_id" })
     bids: Bid[];
+
+    @ManyToOne(() => Region, (b) => b.auctions)
+    @JoinColumn({ name: "id", referencedColumnName: "region_id" })
+    region: Region;
 
     @BeforeInsert()
     private beforeInsert(): void {
