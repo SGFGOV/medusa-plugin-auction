@@ -10,6 +10,7 @@ import { AuctionForwardDrawer } from "../forward/auction-forward-drawer";
 import { Product } from "@medusajs/medusa";
 import { useState } from "react";
 import { useAdminCustomPost } from "medusa-react";
+import { AuctionReverseDrawer } from "src/admin/components/auction/reverse/auction-reverse-drawer";
 
 export function AuctionReverseActions({
     auction,
@@ -21,7 +22,7 @@ export function AuctionReverseActions({
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [bid, setBid] = useState(0.0);
     const { mutateAsync, isLoading } = useAdminCustomPost(
-        "/admin/auctions/reverse/q" + auction.id,
+        "/admin/auctions/reverse/" + auction.id + "/bid",
         ["auctions"]
     );
 
@@ -36,6 +37,9 @@ export function AuctionReverseActions({
     };
     if (!product) {
         return <>No Product Defined</>;
+    }
+    if (isLoading) {
+        return <>Please wait...</>;
     }
     return (
         <>
@@ -53,7 +57,7 @@ export function AuctionReverseActions({
                     </DropdownMenu.Item>
                 </DropdownMenu.Content>
             </DropdownMenu>
-            <AuctionForwardDrawer
+            <AuctionReverseDrawer
                 auction={auction}
                 product={product}
                 open={drawerOpen}
