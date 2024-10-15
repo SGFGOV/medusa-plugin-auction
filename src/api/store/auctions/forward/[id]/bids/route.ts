@@ -48,7 +48,7 @@ export async function GET(
     if (customerId) {
         const auctions = await auctionService.listBids(
             {
-                customerId: customerId
+                customer_id: customerId
             },
             {
                 order: { ends_at: "DESC" },
