@@ -28,6 +28,11 @@ const AuctionViewOngoing = (props: InjectedProps) => {
 
     const auctions = (data?.auctions || []) as Auction[];
 
+    if (error) {
+        props.notify.error("Auction", error.message);
+        console.log(error.stack ?? error.message);
+    }
+
     return (
         <AuctionViewContainer
             title="Ongoing Auctions"

@@ -29,6 +29,11 @@ const AuctionBids = (props: InjectedProps) => {
 
     const { regions } = useAdminRegions();
 
+    if (error) {
+        props.notify.error("Auction", error.message);
+        console.log(error.stack ?? error.message);
+    }
+
     return (
         <Container title="Bids">
             {isLoading && <p>Loading...</p>}
