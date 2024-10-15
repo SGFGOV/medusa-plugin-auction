@@ -10,7 +10,7 @@ import { AuctionForwardDrawer } from "../forward/auction-forward-drawer";
 import { Product } from "@medusajs/medusa";
 import { useState } from "react";
 import { useAdminCustomPost } from "medusa-react";
-import { AuctionReverseDrawer } from "src/admin/components/auction/reverse/auction-reverse-drawer";
+import { AuctionReverseDrawer } from "./auction-reverse-drawer";
 
 export function AuctionReverseActions({
     auction,
