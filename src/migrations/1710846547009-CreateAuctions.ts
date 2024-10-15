@@ -1,8 +1,8 @@
 /* eslint-disable require-jsdoc */
 import { MigrationInterface, QueryRunner } from "typeorm";
 
-export class CreateAuctions1710846547008 implements MigrationInterface {
-    name = "CreateAuctions1710846547008";
+export class CreateAuctions1710846547009 implements MigrationInterface {
+    name = "CreateAuctions1710846547009";
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.query(
@@ -17,11 +17,11 @@ export class CreateAuctions1710846547008 implements MigrationInterface {
         await queryRunner.query(
             `CREATE TABLE "bid" ("id" character varying NOT NULL, ` +
                 `"created_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(), "updated_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),` +
-                ` "amount" integer NOT NULL, "customer_id" character varying NOT NULL, "auctionId" character varying, CONSTRAINT "PK_ed405dda320051aca2dcb1a50bb" ` +
+                ` "amount" integer NOT NULL, "customer_id" character varying NOT NULL, "auction_id" character varying, CONSTRAINT "PK_ed405dda320051aca2dcb1a50bb" ` +
                 `PRIMARY KEY ("id"))`
         );
         await queryRunner.query(
-            `ALTER TABLE "bid" ADD CONSTRAINT "FK_2e00b0f268f93abcf693bb682c6" FOREIGN KEY ("auctionId") ` +
+            `ALTER TABLE "bid" ADD CONSTRAINT "FK_2e00b0f268f93abcf693bb682c6" FOREIGN KEY ("auction_id") ` +
                 `REFERENCES "auction"("id") ON DELETE NO ACTION ON UPDATE NO ACTION`
         );
     }

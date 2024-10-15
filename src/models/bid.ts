@@ -13,7 +13,7 @@ export class Bid extends BaseEntity {
     customer_id: string;
 
     @Column({ name: "auction_id", nullable: false })
-    auctionId: string;
+    auction_id: string;
 
     @ManyToOne(() => Auction, (auction) => auction.bids)
     @JoinColumn({ name: "auction_id" })
