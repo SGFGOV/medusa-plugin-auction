@@ -26,7 +26,7 @@ enum AuctionStatus {
     SOLD = "sold"
 }
 
-export function AuctionDrawer({
+export function AuctionForwardDrawer({
     auction,
     product,
     open,
@@ -222,7 +222,7 @@ export function AuctionDrawer({
                             <Label>Quantity</Label>
                             <div className="flex gap-2 items-center">
                                 <span className="text-gray-500">
-                                    {(product as any).unit ?? "Kgs"}
+                                    {(product as any)?.unit ?? "Kgs"}
                                 </span>
                                 <Input
                                     onChange={(e) => {

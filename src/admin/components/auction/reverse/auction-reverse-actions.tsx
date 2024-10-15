@@ -6,7 +6,7 @@ import {
 } from "@medusajs/icons";
 import { DropdownMenu, IconButton } from "@medusajs/ui";
 import { Auction } from "src/models/auction";
-import { AuctionDrawer } from "../forward/auction-drawer";
+import { AuctionForwardDrawer } from "../forward/auction-forward-drawer";
 import { Product } from "@medusajs/medusa";
 import { useState } from "react";
 import { useAdminCustomPost } from "medusa-react";
@@ -34,7 +34,9 @@ export function AuctionReverseActions({
     const handleBidChange = (e) => {
         setBid(e.target.value);
     };
-
+    if (!product) {
+        return <>No Product Defined</>;
+    }
     return (
         <>
             <DropdownMenu>
@@ -51,7 +53,7 @@ export function AuctionReverseActions({
                     </DropdownMenu.Item>
                 </DropdownMenu.Content>
             </DropdownMenu>
-            <AuctionDrawer
+            <AuctionForwardDrawer
                 auction={auction}
                 product={product}
                 open={drawerOpen}

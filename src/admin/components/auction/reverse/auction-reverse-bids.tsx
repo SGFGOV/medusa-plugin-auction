@@ -8,14 +8,13 @@ import {
 
 import { Table, Heading, Badge, Container } from "@medusajs/ui";
 import { Bid } from "../../../../models/bid";
-import { AuctionActions } from "../forward/auction-actions";
 import { useAdminProducts } from "medusa-react";
 
 type InjectedProps = WidgetProps & {
     product?: Product;
 };
 
-const AuctionBids = (props: InjectedProps) => {
+const AuctionReverseBids = (props: InjectedProps) => {
     const { data, isLoading, error } = useAdminCustomQuery(
         "/admin/auctions/reverse/bids",
         ["bids"]
@@ -105,4 +104,4 @@ const AuctionBids = (props: InjectedProps) => {
     );
 };
 
-export default AuctionBids;
+export default AuctionReverseBids;

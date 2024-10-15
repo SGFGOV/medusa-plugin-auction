@@ -1,6 +1,6 @@
 import { RouteConfig } from "@medusajs/admin";
 import AuctionViewOnGoing from "../../components/auction/reverse/auction-reverse-view-ongoing";
-import AuctionBids from "../../components/auction/reverse/auction-reverse-bids";
+import AuctionReverseBids from "../../components/auction/reverse/auction-reverse-bids";
 import { Puzzle } from "@medusajs/icons";
 import { Container } from "@medusajs/ui";
 
@@ -23,7 +23,7 @@ const Auctions = (): React.ReactElement => {
     return (
         <Container title="My Auctions">
             <AuctionViewOnGoing notify={notificationHandler} />
-            <AuctionBids notify={notificationHandler} />
+            <AuctionReverseBids notify={notificationHandler} />
         </Container>
     );
 };

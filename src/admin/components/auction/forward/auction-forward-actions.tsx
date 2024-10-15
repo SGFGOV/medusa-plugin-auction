@@ -6,12 +6,12 @@ import {
 } from "@medusajs/icons";
 import { DropdownMenu, IconButton } from "@medusajs/ui";
 import { Auction } from "src/models/auction";
-import { AuctionDrawer } from "./auction-drawer";
+import { AuctionForwardDrawer } from "./auction-forward-drawer";
 import { Product } from "@medusajs/medusa";
 import { useState } from "react";
 import { useAdminCustomDelete } from "medusa-react";
 
-export function AuctionActions({
+export function AuctionForwardActions({
     auction,
     product
 }: {
@@ -59,7 +59,7 @@ export function AuctionActions({
                     </DropdownMenu.Item>
                 </DropdownMenu.Content>
             </DropdownMenu>
-            <AuctionDrawer
+            <AuctionForwardDrawer
                 auction={auction}
                 product={product}
                 open={drawerOpen}

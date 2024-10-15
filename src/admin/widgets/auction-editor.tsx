@@ -1,4 +1,8 @@
-import { WidgetConfig, WidgetProps } from "@medusajs/admin";
+import {
+    ProductDetailsWidgetProps,
+    WidgetConfig,
+    WidgetProps
+} from "@medusajs/admin";
 import { Product } from "@medusajs/medusa";
 import {
     useAdminCustomQuery,
@@ -8,11 +12,9 @@ import {
 import { Container } from "../components/common/container";
 import { Table, Heading, Badge } from "@medusajs/ui";
 import { Auction } from "../../models/auction";
-import { AuctionActions } from "../components/auction/forward/auction-actions";
+import { AuctionForwardActions } from "../components/auction/forward/auction-forward-actions";
 
-type InjectedProps = WidgetProps & {
-    product: Product;
-};
+type InjectedProps = ProductDetailsWidgetProps;
 
 const AuctionEditor = (props: InjectedProps) => {
     const { product } = props;
@@ -109,7 +111,7 @@ const AuctionEditor = (props: InjectedProps) => {
                                         {new Date(a.ends_at).toDateString()}
                                     </Table.Cell>
                                     <Table.Cell className="flex items-center justify-end">
-                                        <AuctionActions
+                                        <AuctionForwardActions
                                             auction={a}
                                             product={product}
                                         />

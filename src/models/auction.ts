@@ -13,6 +13,7 @@ import {
 import { Bid } from "./bid";
 import getStatus from "../util/get-status";
 import { Region } from "./region";
+import { Product } from "./product";
 
 export enum AuctionStatus {
     PENDING = "pending",
@@ -61,6 +62,10 @@ export class Auction extends BaseEntity {
     @ManyToOne(() => Region, (b) => b.auctions)
     @JoinColumn({ name: "region_id", referencedColumnName: "id" })
     region: Region;
+
+    @ManyToOne(() => Product, (b) => b.auctions)
+    @JoinColumn({ name: "product_id", referencedColumnName: "id" })
+    product: Product;
 
     @BeforeInsert()
     private beforeInsert(): void {

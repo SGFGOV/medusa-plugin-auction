@@ -17,7 +17,7 @@ export async function GET(
         },
         {
             order: { ends_at: "ASC" },
-            relations: ["bids"]
+            relations: ["bids", "product"]
         }
     );
 
