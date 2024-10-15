@@ -83,12 +83,12 @@ export default class AuctionService extends TransactionBaseService {
         return auctions;
     }
 
-    async listBid(
+    async listBids(
         filters?: FilterableBidFields,
         config: FindConfig<Auction> = {}
-    ): Promise<Bid[]> {
+    ): Promise<[Bid[], number]> {
         const bids = await this.atomicPhase_(async (manager) => {
-            const auctionRepo = manager.getRepository(Bid);
+            const bidRepo = manager.getRepository(Bid);
             const { product_id, ...rest } = filters;
             const query = buildQuery(rest, config);
 
@@ -99,7 +99,7 @@ export default class AuctionService extends TransactionBaseService {
                 };
             }
 
-            return await auctionRepo.find(query);
+            return await bidRepo.findAndCount(query);
         });
         return bids;
     }

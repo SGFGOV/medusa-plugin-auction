@@ -46,14 +46,16 @@ export async function GET(
     ) as AuctionService;
     const userId = req.user.userId;
     if (userId) {
-        const auctions = await auctionService.listBid(
+        const auctions = await auctionService.listBids(
             {
                 product_id: req.query.product_id as string,
                 customerId: userId
             },
             {
                 order: { ends_at: "DESC" },
-                relations: ["auction", "auction.region"]
+                relations: ["auction", "auction.region"],
+                skip: parseInt(`${req.query.offset ?? "0"}`),
+                take: parseInt(`${req.query.limit ?? "20"}`)
             }
         );
 

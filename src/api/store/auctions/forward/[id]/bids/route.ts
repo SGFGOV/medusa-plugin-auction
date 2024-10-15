@@ -46,7 +46,7 @@ export async function GET(
     ) as AuctionService;
     const customerId = req.user.customer_id;
     if (customerId) {
-        const auctions = await auctionService.listBid(
+        const auctions = await auctionService.listBids(
             {
                 customerId: customerId
             },

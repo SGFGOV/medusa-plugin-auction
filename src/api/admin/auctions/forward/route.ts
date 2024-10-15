@@ -19,7 +19,9 @@ export async function GET(
         },
         {
             order: { ends_at: "ASC" },
-            relations: ["bids"]
+            relations: ["bids"],
+            skip: parseInt(`${req.query.offset ?? "0"}`),
+            take: parseInt(`${req.query.limit ?? "15"}`)
         }
     );
 
