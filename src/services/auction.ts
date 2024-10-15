@@ -89,15 +89,8 @@ export default class AuctionService extends TransactionBaseService {
     ): Promise<[Bid[], number]> {
         const bids = await this.atomicPhase_(async (manager) => {
             const bidRepo = manager.getRepository(Bid);
-            const { product_id, ...rest } = filters;
-            const query = buildQuery(rest, config);
 
-            if (product_id) {
-                query.where = {
-                    ...query.where,
-                    product_id: product_id ? In([product_id]) : undefined
-                };
-            }
+            const query = buildQuery(filters, config);
 
             return await bidRepo.findAndCount(query);
         });
