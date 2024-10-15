@@ -52,7 +52,7 @@ export async function GET(
                 customer_id: userId
             },
             {
-                order: { ends_at: "DESC" },
+                order: { created_at: "DESC" },
                 relations: ["auction", "auction.region"],
                 skip: parseInt(`${req.query.offset ?? "0"}`),
                 take: parseInt(`${req.query.limit ?? "20"}`)

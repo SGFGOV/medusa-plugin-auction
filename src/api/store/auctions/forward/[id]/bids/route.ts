@@ -51,7 +51,7 @@ export async function GET(
                 customer_id: customerId
             },
             {
-                order: { ends_at: "DESC" },
+                order: { created_at: "DESC" },
                 relations: ["auction", "auction.region"]
             }
         );
