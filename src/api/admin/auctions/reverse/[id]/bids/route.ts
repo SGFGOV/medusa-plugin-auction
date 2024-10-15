@@ -49,7 +49,7 @@ export async function GET(
         const auctions = await auctionService.listBids(
             {
                 product_id: req.query.product_id as string,
-                customerId: userId
+                customer_id: userId
             },
             {
                 order: { ends_at: "DESC" },

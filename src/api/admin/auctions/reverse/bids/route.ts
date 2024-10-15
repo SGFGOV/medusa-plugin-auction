@@ -15,7 +15,7 @@ export async function GET(
         const bids = await auctionService.listBids(
             {
                 product_id: (req.query.product_id as string) ?? undefined,
-                customerId: userId
+                customer_id: userId
             },
             {
                 order: { ends_at: "DESC" },

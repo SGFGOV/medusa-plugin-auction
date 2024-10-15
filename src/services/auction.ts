@@ -308,5 +308,5 @@ export type FilterableAuctionFields = {
 export type FilterableBidFields = {
     id?: string;
     product_id?: string;
-    customerId: string;
+    customer_id: string;
 };
