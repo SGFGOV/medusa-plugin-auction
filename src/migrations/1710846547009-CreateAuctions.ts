@@ -6,7 +6,7 @@ export class CreateAuctions1710846547009 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.query(
-            `CREATE TYPE IF"public"."auction_status_enum" AS ENUM('pending', 'active', 'expired', 'cancelled', 'sold')`
+            `CREATE TYPE "public"."auction_status_enum" AS ENUM('pending', 'active', 'expired', 'cancelled', 'sold')`
         );
         await queryRunner.query(
             `CREATE TABLE "auction" ("id" character varying NOT NULL, "created_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),` +
